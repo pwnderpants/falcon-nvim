@@ -49,5 +49,6 @@ return require('packer').startup(function(use)
         config = function()
             require'window-picker'.setup()
         end,
-}
+    }
+    use { 'github/copilot.vim' }
 end)
