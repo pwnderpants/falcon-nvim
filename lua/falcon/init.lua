@@ -48,7 +48,6 @@ vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
 vim.scrolloff = 8
 
-
 -- Custom functions
 function Win32GoHome()
     vim.fn.chdir('C:\\Users\\falcon\\AppData\\Local\\nvim\\')
