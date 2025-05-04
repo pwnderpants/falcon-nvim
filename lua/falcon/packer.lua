@@ -40,4 +40,14 @@ return require('packer').startup(function(use)
     use { 'mfussenegger/nvim-dap' }
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
     use { "folke/which-key.nvim" }
+    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end }
+    use {
+        's1n7ax/nvim-window-picker',
+        tag = 'v2.*',
+        config = function()
+            require'window-picker'.setup()
+        end,
+}
 end)
