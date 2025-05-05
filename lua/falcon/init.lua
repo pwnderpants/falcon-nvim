@@ -57,15 +57,25 @@ function PotatoGoHome()
     vim.fn.chdir('/home/falcon/.config/nvim/')
 end
 
+function GoHome()
+    vim.fn.chdir('/home/falcon/')
+end
+
+function GoToGitHub()
+    vim.fn.chdir('/home/falcon/github/')
+end
+
 -- Custom keymaps
 vim.keymap.set("n", "<S-tab>", "<Cmd>tabprevious<CR>", { desc = 'Previous tab' })
 vim.keymap.set("n", "<tab>", "<Cmd>tabNext<CR>", { desc = 'Next tab' })
 vim.keymap.set("n", "<leader>\\", "<Cmd>Neotree toggle<CR>", { desc = 'Toggle Neotree' })
 vim.keymap.set("n", "<leader>nh", "<Cmd>noh<CR>", { desc = 'No Highlight' })
 vim.keymap.set("n", "<leader>wh", "<Cmd>lua Win32GoHome()<CR>", { desc = 'Go to nvim config dir (Win32 only)' })
+vim.keymap.set("n", "<leader>gh", "<Cmd>lua GoHome()<CR>", { desc = 'Go to home directory' })
+vim.keymap.set("n", "<leader>GH", "<Cmd>lua GoToGitHub()<CR>", { desc = 'Go to github directory' })
 vim.keymap.set("n", "<leader>lh", "<Cmd>lua PotatoGoHome()<CR>", { desc = 'Go to nvim config dir (Linux only)' })
 vim.keymap.set("n", "<leader>so", "<Cmd>so<CR>", { desc = 'Source current file' })
-
+vim.keymap.set("n", "<leader>PS", "<Cmd>so<CR><Cmd>PackerSync<CR>", { desc = 'Run PackerSync' })
 
 --Toggle Term
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
