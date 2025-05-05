@@ -51,4 +51,19 @@ return require('packer').startup(function(use)
         end,
     }
     use { 'github/copilot.vim' }
+    use {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                theme = 'hyper',
+                config = {
+                    week_header = {
+                        enable = true,
+                    },
+                }
+            }
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
+    }
 end)
