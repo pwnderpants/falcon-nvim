@@ -101,4 +101,17 @@ return require('packer').startup(function(use)
             require("ibl").setup()
         end
     }
+
+    use {
+        'CopilotC-Nvim/CopilotChat.nvim',
+
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'github/copilot.vim'
+        },
+
+        config = function()
+            require('CopilotChat').setup()
+        end
+    }
 end)
