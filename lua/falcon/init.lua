@@ -9,14 +9,14 @@ vim.wo.number = true
 -- Inline diagnostics
 vim.diagnostic.config({
     virtual_text = {
-        severity = vim.diagnostic.severity.WARN,
+        severity = vim.diagnostic.severity.INFO,
         prefix = '●',  -- Use a symbol to indicate warnings
         spacing = 0,
         source = true
     },
     signs = {
         text = {
-            [vim.diagnostic.severity.WARN] = '!',
+            [vim.diagnostic.severity.INFO] = '!',
         },
         linehl = false,
         numhl = false,
@@ -54,37 +54,39 @@ function Win32GoHome()
 end
 
 function PotatoGoHome()
-    vim.fn.chdir('~/.config/nvim/')
+    vim.fn.chdir('/home/falcon/.config/nvim/')
 end
 
 -- Custom keymaps
-vim.keymap.set("n", "<S-tab>", "<Cmd>tabprevious<CR>")
-vim.keymap.set("n", "<tab>", "<Cmd>tabNext<CR>")
-vim.keymap.set("n", "<leader>\\", "<Cmd>Neotree toggle<CR>")
-vim.keymap.set("n", "<leader>nh", "<Cmd>noh<CR>")
-vim.keymap.set("n", "<leader>wh", "<Cmd>lua Win32GoHome()<CR>")
-vim.keymap.set("n", "<leader>lh", "<Cmd>lua PotatoGoHome()<CR>")
+vim.keymap.set("n", "<S-tab>", "<Cmd>tabprevious<CR>", { desc = 'Previous tab' })
+vim.keymap.set("n", "<tab>", "<Cmd>tabNext<CR>", { desc = 'Next tab' })
+vim.keymap.set("n", "<leader>\\", "<Cmd>Neotree toggle<CR>", { desc = 'Toggle Neotree' })
+vim.keymap.set("n", "<leader>nh", "<Cmd>noh<CR>", { desc = 'No Highlight' })
+vim.keymap.set("n", "<leader>wh", "<Cmd>lua Win32GoHome()<CR>", { desc = 'Go to nvim config dir (Win32 only)' })
+vim.keymap.set("n", "<leader>lh", "<Cmd>lua PotatoGoHome()<CR>", { desc = 'Go to nvim config dir (Linux only)' })
+vim.keymap.set("n", "<leader>so", "<Cmd>so<CR>", { desc = 'Source current file' })
+
 
 --Toggle Term
-vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
-vim.keymap.set('t', 'jk', [[<C-\><C-n>]])
-vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
-vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]])
-vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]])
-vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
-vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { desc = 'Move to left window' })
+vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], { desc = 'Move to bottom window' })
+vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], { desc = 'Move to top window' })
+vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], { desc = 'Move to right window' })
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], { desc = 'Close terminal window' })
 
 vim.keymap.set("n", "<S-t>", function()
     vim.cmd("ToggleTerm")
-end)
+end, { desc = 'Toggle terminal' })
 
 vim.keymap.set("n", "<leader>pp", function()
     vim.cmd("set paste")
 	vim.cmd("echo 'Paste mode enabled'")
 	vim.cmd("startinsert")
-end)
+end, { desc = 'Paste mode' })
 
 vim.keymap.set("n", "<leader>nop", function()
     vim.cmd("set nopaste")
 	vim.cmd("echo 'Paste mode disabled'")
-end)
+end, { desc = 'Disable paste mode' })
