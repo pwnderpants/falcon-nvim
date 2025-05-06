@@ -76,6 +76,9 @@ vim.keymap.set("n", "<leader>GH", "<Cmd>lua GoToGitHub()<CR>", { desc = 'Go to g
 vim.keymap.set("n", "<leader>lh", "<Cmd>lua PotatoGoHome()<CR>", { desc = 'Go to nvim config dir (Linux only)' })
 vim.keymap.set("n", "<leader>so", "<Cmd>so<CR>", { desc = 'Source current file' })
 vim.keymap.set("n", "<leader>PS", "<Cmd>so<CR><Cmd>PackerSync<CR>", { desc = 'Run PackerSync' })
+vim.keymap.set("n", "<leader>cd", "<Cmd>Copilot disable<CR><Cmd>echo 'Disabling Copilot'<CR>", { desc = 'Disable Copilot' })
+vim.keymap.set("n", "<leader>ce", "<Cmd>Copilot enable<CR><Cmd>echo 'Enabling Copilot'<CR>", { desc = 'Enable Copilot' })
+
 
 --Toggle Term
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
