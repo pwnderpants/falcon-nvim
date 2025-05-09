@@ -2,7 +2,13 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     -- Replace the language servers listed here 
     -- with the ones you want to install
-    ensure_installed = {'lua_ls', 'rust_analyzer', 'pyright'},
+    ensure_installed = {
+        'lua_ls',
+        'rust_analyzer',
+        'pyright',
+        'gopls',
+        'clangd',
+    },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
@@ -106,6 +112,30 @@ require('mason-lspconfig').setup({
             })
         end,
 
+        gopls = function()
+            require('lspconfig').gopls.setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                cmd = {"gopls"},
+                filetypes = { "go", "gomod", "gowork", "gotmpl" },
+                root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+                settings = {
+                    gopls = {
+                        completeUnimported = true,
+                        usePlaceholders = true,
+                        analyses = {
+                            unusedparams = true,
+                        },
+                    },
+                },
+            })
+        end,
+
+        cland = function()
+            require('lspconfig').clangd.setup({
+
+            })
+        end
     },
 })
 
