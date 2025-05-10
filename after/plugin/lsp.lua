@@ -8,6 +8,9 @@ require('mason-lspconfig').setup({
         'pyright',
         'gopls',
         'clangd',
+        'bashls',
+        'yamlls',
+        'ruby_lsp',
     },
     handlers = {
         function(server_name)
@@ -118,7 +121,7 @@ require('mason-lspconfig').setup({
                 capabilities = capabilities,
                 cmd = {"gopls"},
                 filetypes = { "go", "gomod", "gowork", "gotmpl" },
-                root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+                -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
                 settings = {
                     gopls = {
                         completeUnimported = true,
@@ -135,7 +138,19 @@ require('mason-lspconfig').setup({
             require('lspconfig').clangd.setup({
 
             })
-        end
+        end,
+
+        yamlls = function()
+            require('lspconfig').yamlls.setup({
+
+            })
+        end,
+
+        rubylsp = function ()
+            require('lspconfig').rubylsp.setup({
+
+            })
+        end,
     },
 })
 
