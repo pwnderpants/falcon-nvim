@@ -131,7 +131,7 @@ require('mason-lspconfig').setup({
             })
         end,
 
-        cland = function()
+        clangd = function()
             require('lspconfig').clangd.setup({
 
             })
