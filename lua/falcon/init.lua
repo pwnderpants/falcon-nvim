@@ -81,6 +81,16 @@ vim.keymap.set("n", "<leader>PS", "<Cmd>so<CR><Cmd>PackerSync<CR>", { desc = 'Ru
 vim.keymap.set("n", "<leader>cd", "<Cmd>Copilot disable<CR><Cmd>echo 'Disabling Copilot'<CR>", { desc = 'Disable Copilot' })
 vim.keymap.set("n", "<leader>ce", "<Cmd>Copilot enable<CR><Cmd>echo 'Enabling Copilot'<CR>", { desc = 'Enable Copilot' })
 
+vim.keymap.set("n", "<leader>pp", function()
+    vim.cmd("set paste")
+	vim.cmd("echo 'Paste mode enabled'")
+	vim.cmd("startinsert")
+end, { desc = 'Paste mode' })
+
+vim.keymap.set("n", "<leader>nop", function()
+    vim.cmd("set nopaste")
+	vim.cmd("echo 'Paste mode disabled'")
+end, { desc = 'Disable paste mode' })
 
 --Toggle Term
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
@@ -95,13 +105,14 @@ vim.keymap.set("n", "<S-t>", function()
     vim.cmd("ToggleTerm")
 end, { desc = 'Toggle terminal' })
 
-vim.keymap.set("n", "<leader>pp", function()
-    vim.cmd("set paste")
-	vim.cmd("echo 'Paste mode enabled'")
-	vim.cmd("startinsert")
-end, { desc = 'Paste mode' })
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 
-vim.keymap.set("n", "<leader>nop", function()
-    vim.cmd("set nopaste")
-	vim.cmd("echo 'Paste mode disabled'")
-end, { desc = 'Disable paste mode' })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.go",
+    callback = function()
+        require('go.format').goimports()
+    end,
+    group = format_sync_grp,
+})
+
+require('go').setup()

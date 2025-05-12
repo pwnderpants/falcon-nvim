@@ -114,4 +114,7 @@ return require('packer').startup(function(use)
             require('CopilotChat').setup()
         end
     }
+    
+    use 'ray-x/go.nvim'
+    use 'ray-x/guihua.lua'
 end)
