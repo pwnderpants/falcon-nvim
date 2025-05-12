@@ -212,7 +212,23 @@ cmp.setup({
             vim.snippet.expand(args.body)
         end,
     },
-    mapping = cmp.mapping.preset.insert({}),
+    mapping = cmp.mapping.preset.insert({
+        ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Enter key
+        ["<C-CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<S-CR>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+    }),
 })
 
 -- Reserve a space in the gutter
