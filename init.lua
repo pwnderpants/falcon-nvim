@@ -34,4 +34,4 @@ require('lazy').setup({
     require 'plugins.colorizer',
 })
 
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd[[colorscheme tokyonight]]
