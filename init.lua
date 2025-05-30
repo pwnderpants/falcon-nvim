@@ -31,6 +31,7 @@ require('lazy').setup({
     require 'plugins.autopairs',
     require 'plugins.debug',
     require 'plugins.which-key',
+    require 'plugins.colorizer',
 })
 
 vim.cmd[[colorscheme tokyonight-night]]
