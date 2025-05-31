@@ -48,3 +48,8 @@ vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = 'Go to next
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
+-- Copilot
+vim.keymap.set('n', '<leader>cc', '<cmd> Copilot panel <CR>', opts) -- open Copilot panel
+vim.keymap.set('n', '<leader>cd', '<cmd> Copilot disable <CR>', opts) -- open Copilot panel
+vim.keymap.set('n', '<leader>ce', '<cmd> Copilot enable <CR>', opts) -- open Copilot panel
+vim.keymap.set('n', '<leader>ct', '<cmd> Copilot toggle <CR>', opts) -- open Copilot panel
