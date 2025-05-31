@@ -24,6 +24,11 @@ vim.keymap.set('n', '<leader><Up>', ':wincmd k<CR>', { desc = 'Move to window ab
 vim.keymap.set('n', '<leader><Down>', ':wincmd j<CR>', { desc = 'Move to window below' })
 vim.keymap.set('n', '<leader><Left>', ':wincmd h<CR>', { desc = 'Move to window on the left' })
 vim.keymap.set('n', '<leader><Right>', ':wincmd l<CR>', { desc = 'Move to window on the right' })
+vim.keymap.set('n', '<leader>rw', ':vertical resize +10<CR>', { desc = 'Vertical resize +10' })
+vim.keymap.set('n', '<leader>rW', ':vertical resize -10<CR>', { desc = 'Vertical resize -10' })
+vim.keymap.set('n', '<leader>rh', ':horizontal resize +10<CR>', { desc = 'Horizontal resize +10' })
+vim.keymap.set('n', '<leader>rH', ':horizontal resize -10<CR>', { desc = 'Horizontal resize -10' })
+
 
 -- Tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open new tab' })
