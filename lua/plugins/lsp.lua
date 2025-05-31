@@ -125,6 +125,16 @@ return {
         vim.list_extend(ensure_installed, {
             'stylua', 
         })
+
+        require'lspconfig'.lua_ls.setup{
+            settings = {
+                Lua = {
+                    diagnostics = {
+                    globals = {'vim'},  -- Recognize 'vim' as a global variable
+                    },
+                },
+            },
+        }
         require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
         require('mason-lspconfig').setup {
