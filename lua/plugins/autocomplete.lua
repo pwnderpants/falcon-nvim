@@ -29,7 +29,7 @@ return { -- Autocompletion
     opts = {
         keymap = {
             preset = 'default',
-            ['<CR>'] = { 'accept_and_enter', 'fallback' },
+            ['<CR>'] = { 'accept', 'fallback' },
         },
 
         appearance = {

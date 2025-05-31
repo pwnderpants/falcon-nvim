@@ -1,4 +1,3 @@
--- Define leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -6,41 +5,41 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 local opts = { noremap = true, silent = true }
 
 -- General
-vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)              -- save file with ContVrol+S
-vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)              -- quit with Control+Q
-vim.keymap.set('n', '<leader>e', '<cmd> Neotree toggle<CR>', opts)    -- launch NeoTree
-vim.keymap.set('n', 'x', '"_x', opts)                           -- delete single character without copying to register
+vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', { desc = 'Save file' })
+vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>e', '<cmd> Neotree toggle<CR>', { desc = 'Toggle Neotree' })
+vim.keymap.set('n', 'x', '"_x', { desc = 'Delete without yanking' })
 
 -- Buffers
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)                -- next buffer
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)          -- previous buffer
-vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts)               -- delete buffer
-vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts)       -- new buffer
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', { desc = 'New buffer' })
 
 -- Window management
-vim.keymap.set('n', '<leader>v', '<C-w>v', opts)                -- create vertical split
-vim.keymap.set('n', '<leader>h', '<C-w>s', opts)                -- create horizontal split
-vim.keymap.set('n', '<leader>xs', ':close<CR>', opts)           -- close window
-vim.keymap.set('n', '<leader><Up>', ':wincmd k<CR>', opts)      -- focus window above
-vim.keymap.set('n', '<leader><Down>', ':wincmd j<CR>', opts)    -- focus window below
-vim.keymap.set('n', '<leader><Left>', ':wincmd h<CR>', opts)    -- focus window left
-vim.keymap.set('n', '<leader><Right>', ':wincmd l<CR>', opts)   -- focus window right
+vim.keymap.set('n', '<leader>v', '<C-w>v', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<leader>h', '<C-w>s', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<leader>xs', ':close<CR>', { desc = 'Close current window' })
+vim.keymap.set('n', '<leader><Up>', ':wincmd k<CR>', { desc = 'Move to window above' })
+vim.keymap.set('n', '<leader><Down>', ':wincmd j<CR>', { desc = 'Move to window below' })
+vim.keymap.set('n', '<leader><Left>', ':wincmd h<CR>', { desc = 'Move to window on the left' })
+vim.keymap.set('n', '<leader><Right>', ':wincmd l<CR>', { desc = 'Move to window on the right' })
 
 -- Tabs
-vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts)          -- open new tab
-vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts)        -- close tab
-vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts)            -- next tab
-vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts)            -- previous tab
+vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open new tab' })
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close current tab' })
+vim.keymap.set('n', '<leader>tn', ':tabn<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<leader>tp', ':tabp<CR>', { desc = 'Previous tab' })
 
 -- Toggles
-vim.keymap.set('n', '<leader>nh', ':noh<CR>', opts)             -- toggle highlighting
+vim.keymap.set('n', '<leader>nh', ':noh<CR>', { desc = 'Clear search highlights' })
 
 -- Stay in indent mode
-vim.keymap.set('v', '<', '<gv', opts)
-vim.keymap.set('v', '>', '>gv', opts)
+vim.keymap.set('v', '<', '<gv', { desc = 'Decrease indent and stay in visual mode' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Increase indent and stay in visual mode' })
 
 -- Keep last yanked when pasting
-vim.keymap.set('v', 'p', '"_dP', opts)
+vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste without losing last yanked text' })
 
 -- Diagnostic nav
 vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -49,7 +48,12 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Copilot
-vim.keymap.set('n', '<leader>cc', '<cmd> Copilot panel <CR>', opts) -- open Copilot panel
-vim.keymap.set('n', '<leader>cd', '<cmd> Copilot disable <CR>', opts) -- open Copilot panel
-vim.keymap.set('n', '<leader>ce', '<cmd> Copilot enable <CR>', opts) -- open Copilot panel
-vim.keymap.set('n', '<leader>ct', '<cmd> Copilot toggle <CR>', opts) -- open Copilot panel
+vim.keymap.set('n', '<leader>cc', '<cmd> Copilot panel <CR>', { desc = 'Open Copilot panel' })
+vim.keymap.set('n', '<leader>cd', '<cmd> Copilot disable <CR>', { desc = 'Disable Copilot' })
+vim.keymap.set('n', '<leader>ce', '<cmd> Copilot enable <CR>', { desc = 'Enable Copilot' })
+vim.keymap.set('n', '<leader>ct', '<cmd> Copilot toggle <CR>', { desc = 'Toggle Copilot' })
+
+-- Terminal
+vim.keymap.set('n', '<leader>tv', '<cmd> belowright split  | terminal <CR>', { desc = 'Run Terminal' })
+vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { desc = 'Back to normal mode' })
+vim.keymap.set('n', '<leader>tf', require('user.float-term').toggle_float_window, { desc = 'Toggle floating Terminal,' })
