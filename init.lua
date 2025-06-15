@@ -25,7 +25,7 @@ require('lazy').setup({
     require 'plugins.telescope',
     require 'plugins.lsp',
     require 'plugins.autocomplete',
-    require 'plugins.alpha',
+    -- require 'plugins.alpha',
     require 'plugins.gitsigns',
     require 'plugins.indent-blankline',
     require 'plugins.autopairs',
@@ -34,6 +34,7 @@ require('lazy').setup({
     require 'plugins.colorizer',
     require 'plugins.barbecue',
     require 'plugins.copilot',
+    require 'plugins.snacks',
 })
 
 vim.cmd[[colorscheme tokyonight]]
