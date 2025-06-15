@@ -19,4 +19,4 @@ function M.setup(capabilities)
     }
 end
 
-return M 
+return M

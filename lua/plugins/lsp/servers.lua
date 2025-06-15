@@ -48,4 +48,4 @@ vim.list_extend(M.ensure_installed, {
     'stylua',
 })
 
-return M 
+return M
