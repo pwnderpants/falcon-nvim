@@ -5,7 +5,7 @@ return {
   build = ":TSUpdate",
   config = function()
       require("lazy").setup {
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+          ensure_installed = { "go", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "python", "bash", "yaml" },
           sync_install = false,
           auto_install = true,
           ignore_install = { "javascript" },

@@ -35,6 +35,7 @@ require('lazy').setup({
     require 'plugins.barbecue',
     require 'plugins.copilot',
     require 'plugins.snacks',
+    require 'plugins.go',
 })
 
 vim.cmd[[colorscheme tokyonight]]
