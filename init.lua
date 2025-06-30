@@ -34,4 +34,5 @@ require('lazy').setup({
     require 'plugins.snacks',
     require 'plugins.go',
     require 'plugins.catppuccin',
+    require 'plugins.copilot-chat',
 })
