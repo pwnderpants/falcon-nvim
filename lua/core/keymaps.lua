@@ -2,8 +2,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
-local opts = { noremap = true, silent = true }
-
 -- General
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', { desc = 'Save file' })
 vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', { desc = 'Quit' })
@@ -24,11 +22,10 @@ vim.keymap.set('n', '<leader><Up>', ':wincmd k<CR>', { desc = 'Move to window ab
 vim.keymap.set('n', '<leader><Down>', ':wincmd j<CR>', { desc = 'Move to window below' })
 vim.keymap.set('n', '<leader><Left>', ':wincmd h<CR>', { desc = 'Move to window on the left' })
 vim.keymap.set('n', '<leader><Right>', ':wincmd l<CR>', { desc = 'Move to window on the right' })
-vim.keymap.set('n', '<leader>rw', ':vertical resize +10<CR>', { desc = 'Vertical resize +10' })
-vim.keymap.set('n', '<leader>rW', ':vertical resize -10<CR>', { desc = 'Vertical resize -10' })
-vim.keymap.set('n', '<leader>rh', ':horizontal resize +10<CR>', { desc = 'Horizontal resize +10' })
-vim.keymap.set('n', '<leader>rH', ':horizontal resize -10<CR>', { desc = 'Horizontal resize -10' })
-
+vim.keymap.set('n', '<leader>rw', ':vertical resize +20<CR>', { desc = 'Vertical resize +20' })
+vim.keymap.set('n', '<leader>rW', ':vertical resize -20<CR>', { desc = 'Vertical resize -20' })
+vim.keymap.set('n', '<leader>rh', ':horizontal resize +20<CR>', { desc = 'Horizontal resize +20' })
+vim.keymap.set('n', '<leader>rH', ':horizontal resize -20<CR>', { desc = 'Horizontal resize -20' })
 
 -- Tabs
 vim.keymap.set('n', '<leader>to', ':tabnew<CR>', { desc = 'Open new tab' })
@@ -54,7 +51,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Copilot
 vim.keymap.set('n', '<leader>cc', '<cmd> CopilotChatToggle <CR>', { desc = 'Copilot Chat Toggle' })
-vim.keymap.set('n', '<leader>cr', '<cmd> CopilotChatToggle <CR>', { desc = 'Copilot Chat Toggle' })
+vim.keymap.set('n', '<leader>cr', '<cmd> CopilotChatReset <CR>', { desc = 'Copilot Reset' })
 vim.keymap.set('n', '<leader>cf', '<cmd> CopilotChatFix <CR>', { desc = 'Copilot Chat Fix' })
 vim.keymap.set('n', '<leader>ce', '<cmd> CopilotChatExplain <CR>', { desc = 'Copilot Chat Explain' })
 vim.keymap.set('n', '<leader>co', '<cmd> CopilotChatOptimize <CR>', { desc = 'Copilot Chat Optimize' })
