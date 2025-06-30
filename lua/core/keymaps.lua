@@ -53,10 +53,13 @@ vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Copilot
-vim.keymap.set('n', '<leader>cc', '<cmd> Copilot panel <CR>', { desc = 'Open Copilot panel' })
-vim.keymap.set('n', '<leader>cd', '<cmd> Copilot disable <CR>', { desc = 'Disable Copilot' })
-vim.keymap.set('n', '<leader>ce', '<cmd> Copilot enable <CR>', { desc = 'Enable Copilot' })
-vim.keymap.set('n', '<leader>ct', '<cmd> Copilot toggle <CR>', { desc = 'Toggle Copilot' })
+vim.keymap.set('n', '<leader>cc', '<cmd> CopilotChatToggle <CR>', { desc = 'Copilot Chat Toggle' })
+vim.keymap.set('n', '<leader>cr', '<cmd> CopilotChatToggle <CR>', { desc = 'Copilot Chat Toggle' })
+vim.keymap.set('n', '<leader>cf', '<cmd> CopilotChatFix <CR>', { desc = 'Copilot Chat Fix' })
+vim.keymap.set('n', '<leader>ce', '<cmd> CopilotChatExplain <CR>', { desc = 'Copilot Chat Explain' })
+vim.keymap.set('n', '<leader>co', '<cmd> CopilotChatOptimize <CR>', { desc = 'Copilot Chat Optimize' })
+vim.keymap.set('n', '<leader>cw', '<cmd> CopilotChatReview <CR>', { desc = 'Copilot Chat Review' })
+vim.keymap.set('n', '<leader>cm', '<cmd> CopilotChatModels <CR>', { desc = 'Copilot Chat Models' })
 
 -- Terminal
 vim.keymap.set('n', '<leader>tv', '<cmd> belowright split  | terminal <CR>', { desc = 'Run Terminal' })
