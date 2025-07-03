@@ -23,8 +23,6 @@ require('lazy').setup({
     require 'plugins.bufferline',
     require 'plugins.catppuccin',
     require 'plugins.colorizer',
-    require 'plugins.copilot',
-    require 'plugins.copilot-chat',
     require 'plugins.debug',
     require 'plugins.gitsigns',
     require 'plugins.go',
