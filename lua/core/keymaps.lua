@@ -5,7 +5,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- General
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', { desc = 'Save file' })
 vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', { desc = 'Quit' })
-vim.keymap.set('n', '<leader>e', '<cmd> Neotree toggle<CR>', { desc = 'Toggle Neotree' })
+vim.keymap.set('n', '<leader>e', '<cmd> Telescope find_files <CR>', { desc = 'Find files' })
 vim.keymap.set('n', 'x', '"_x', { desc = 'Delete without yanking' })
 
 -- Buffers
@@ -49,16 +49,7 @@ vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { desc = 'Go to next
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
--- Copilot
-vim.keymap.set('n', '<leader>cc', '<cmd> CopilotChatToggle <CR>', { desc = 'Copilot Chat Toggle' })
-vim.keymap.set('n', '<leader>cr', '<cmd> CopilotChatReset <CR>', { desc = 'Copilot Reset' })
-vim.keymap.set('n', '<leader>cf', '<cmd> CopilotChatFix <CR>', { desc = 'Copilot Chat Fix' })
-vim.keymap.set('n', '<leader>ce', '<cmd> CopilotChatExplain <CR>', { desc = 'Copilot Chat Explain' })
-vim.keymap.set('n', '<leader>co', '<cmd> CopilotChatOptimize <CR>', { desc = 'Copilot Chat Optimize' })
-vim.keymap.set('n', '<leader>cw', '<cmd> CopilotChatReview <CR>', { desc = 'Copilot Chat Review' })
-vim.keymap.set('n', '<leader>cm', '<cmd> CopilotChatModels <CR>', { desc = 'Copilot Chat Models' })
-
 -- Terminal
 vim.keymap.set('n', '<leader>tv', '<cmd> belowright split  | terminal <CR>', { desc = 'Run Terminal' })
 vim.keymap.set('t', '<esc><esc>', '<C-\\><C-n>', { desc = 'Back to normal mode' })
-vim.keymap.set('n', '<leader>tf', require('user.float-term').toggle_float_window, { desc = 'Toggle floating Terminal,' })
+vim.keymap.set('n', '<leader>tf', require('user.float-term').toggle_float_window, { desc = 'Toggle floating Terminal' })
