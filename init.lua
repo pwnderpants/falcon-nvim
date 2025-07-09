@@ -30,6 +30,7 @@ require('lazy').setup({
     require 'plugins.lsp',
     require 'plugins.lualine',
     require 'plugins.noice',
+    require 'plugins.render-markdown',
     require 'plugins.snacks',
     require 'plugins.telescope',
     require 'plugins.treesitter',
