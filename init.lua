@@ -17,7 +17,6 @@ local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
 require('lazy').setup({
-    require 'plugins.alpha',
     require 'plugins.autocomplete',
     require 'plugins.autopairs',
     require 'plugins.barbecue',
@@ -31,6 +30,7 @@ require('lazy').setup({
     require 'plugins.lsp',
     require 'plugins.lualine',
     require 'plugins.noice',
+    require 'plugins.render-markdown',
     require 'plugins.snacks',
     require 'plugins.telescope',
     require 'plugins.treesitter',
