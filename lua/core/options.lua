@@ -8,6 +8,12 @@ vim.o.wrap = false
 vim.o.linebreak = true
 vim.o.mouse = 'a'
 vim.wo.number = true
+vim.autoread = true
+
+vim.api.nvim_create_autocmd({"FocusGained", "BufEnter"}, {
+    command = "checktime"
+})
+
 
 -- Ensure proper background color handling
 vim.o.background = "dark"
