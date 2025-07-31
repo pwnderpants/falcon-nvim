@@ -24,6 +24,7 @@ require('lazy').setup({
     require 'plugins.catppuccin',
     require 'plugins.colorizer',
     require 'plugins.debug',
+    require 'plugins.gdscript',
     require 'plugins.gitsigns',
     require 'plugins.go',
     require 'plugins.indent-blankline',
